@@ -1,8 +1,8 @@
 # 自動建立每月的時間表並生成EXCEL
 
 
-
-
+##### 版本號: V1.0
+ 
 ## 功能特色:
 
 1. 實時取得澳門假期
@@ -13,9 +13,9 @@
 
 4. 自動把日期對應星期幾
 
-5. 自動生成 EXCEL並 自動生成檔案名稱 
+5. 自動生成 EXCEL並自動生成檔案名稱 
 
-6. 自動把星期六和日相對應的儲存格填上顏色(未完成)
+6. 自動把星期六和日相對應的儲存格填上顏色
 
 
 ## 使用方法
@@ -26,9 +26,8 @@
 3. 直接使用CMD 打開excel.py 
 `或`使用以下`command` 編譯成`exe`檔
 ```
-pip install pyinstaller
-
-pyinstaller --onefile -w 'excel.py'
+1. 打開`CMD` 輸入`command` 安裝 `pip install pyinstaller`
+2. 打開`Powershell` 輸入 `command`  `pyinstaller --onefile -w 'excel.py'`
 
 ```
 4. 輸入年份
