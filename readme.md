@@ -1,7 +1,7 @@
 # 自動建立每月的時間表並生成EXCEL
 
 
-##### 版本號: V1.31
+##### 版本號: V1.32
  
 ## 功能特色:
 
@@ -31,7 +31,7 @@
 `或`使用以下`command` 編譯成`exe`檔
 ```
 1. 打開`CMD` 輸入`command` 安裝 `pip install pyinstaller`
-2. 打開`Powershell` 輸入 `command`  `pyinstaller --onefile -w 'excel.py'`
+2. 打開`Powershell` 輸入 `command`  `pyinstaller --onefile -w 'excel_v1.32.py'`
 
 ```
 4. 大量輸出模式 
@@ -46,7 +46,7 @@
 ---
 `方法2`:
 1. 打開EXE version 資料夾裡面的exe檔
-2. 看需要修改conf.ini 的文件
+2. 使用預設定設置或自行修改conf.ini 的文件
 3. 大量輸出模式 
 >已打開大量輸出模式
 >    3.1 設定參數正確，看見根目錄下產生多個新的excel檔
@@ -68,23 +68,27 @@
 
 #### config文件說明
 
-|  變數   | 說明  |
-|  ----  | ----  |
-| day_diff=1 | hoilday.isc 過了多少天才會向網站下載新的版本 注1|
-| weekend_color=FCE4D6  | 設定週六和週日儲存格的顏色，顏色參數請參考HTML |
-| hoilday_color=FFFF99  | 設定澳門假期儲存格的顏色，顏色參數請參考HTML |
-| save_excel_name  | 輸出EXCEL 的名稱 |
-| year_month_day_who_first=day  | 想要年月日,哪一個排隊,由左到由 day/month/year|
-| year_month_day_who_second=month  | 想要年月日,哪一個排隊,由左到由 day/month/year|
-| year_month_day_who_third=year  | 想要年月日,哪一個排隊,由左到由 day/month/year|
-| excel_Formula_mode=false  | 對應的星期六日是否用excel 公式|
+|  變數   | 說明  | 變數範圍  |
+|  ----  | ----  | ----  |
+| day_diff=1 | hoilday.isc 過了多少天才會向網站下載新的版本 注1|  數字(0或以上)  |
+| weekend_color=FCE4D6  | 設定週六和週日儲存格的顏色，顏色參數請參考HTML | 6位16進制的顏色代碼 |
+| hoilday_color=FFFF99  | 設定澳門假期儲存格的顏色，顏色參數請參考HTML | 6位16進制的顏色代碼|
+| save_excel_name  | 輸出EXCEL 的名稱 | 自定義 |
+| year_month_day_who_first=day  | 想要年月日,哪一個排隊,由左到由 |  day/month/year  |
+| year_month_day_who_second=month  | 想要年月日,哪一個排隊,由左到由 |  day/month/year  |
+| year_month_day_who_third=year  | 想要年月日,哪一個排隊,由左到由 |  day/month/year  |
+| excel_Formula_mode=false  | 對應的星期六日是否用excel 公式| true/false  |
+| excel_output_year_insavename  | 輸出EXCEL檔案名稱時是否需要年0份 | true/false  |
+| excel_output__sort_insavename  | 輸出EXCEL檔案名稱時是否需要數字排序| true/false  |
 
-|  大批輸出模式   | 說明  |
-|  ----  | ----  |
-| muti_mode_on=true | 是否打開大批輸出模式,否果沒有打開(false)，則下面的參數不會生效|
-| export_year | 輸入大批輸出的年份|
-| export_start_month | 從哪個月份開始|
-| export_end_month | 從哪個月份結束|
+
+
+|  大批輸出模式   | 說明  | 變數範圍  |
+|  ----  | ----  | ----  |
+| muti_mode_on=true | 是否打開大批輸出模式,否果沒有打開(false)，則下面的參數不會生效| true/false |
+| export_year | 輸入大批輸出的年份| 2000-2099|
+| export_start_month | 從哪個月份開始| 1-12 |
+| export_end_month | 從哪個月份結束| 1-12|
 
 
 ## 備注

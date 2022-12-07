@@ -21,6 +21,9 @@ conf_year_month_day_who_first = config.get('conf','year_month_day_who_first')
 conf_year_month_day_who_second = config.get('conf','year_month_day_who_second')
 conf_year_month_day_who_third = config.get('conf','year_month_day_who_third')
 conf_excel_Formula_mode = config.get('conf','excel_Formula_mode')
+conf_excel_output_year_insavename = config.get('conf','excel_output_year_insavename')
+conf_excel_output__sort_insavename = config.get('conf','excel_output__sort_insavename')
+
 
 conf_muti_mode_on = config.get('muti_mode','muti_mode_on')
 conf_export_year = config.get('muti_mode','export_year')
@@ -177,8 +180,21 @@ for loop_how_time in range (conf_export_start_month,conf_export_end_month):
                 Have_This_Year_Month = 1
     g.close()
     bigmonth = today.strftime("%B")
+     
+    #### 
+    if conf_excel_output__sort_insavename == 'true' :
+        output_sort = str(loop_how_time) + '. '
+    else :
+        output_sort = "" 
+    ####
+    if conf_excel_output_year_insavename == 'true' :
+        output_year = str(year_int) + '-'
+    else :
+        output_year = ""
+    ####
+
     if Have_This_Year_Month == 1 and month_int <= 12 and month_int >= 1 :
-        wb.save('{}-{}.xlsx'.format(conf_save_excel_name,bigmonth))
+        wb.save('{}{}-{}{}.xlsx'.format(output_sort,conf_save_excel_name,output_year,bigmonth))
     else :
         messagebox.showerror("DID NOT HAVA DATA", "The input is incorrect, the corresponding year or month cannot be found {}_{}".format(year_int,month_int))
 
